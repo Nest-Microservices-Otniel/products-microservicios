@@ -6,8 +6,12 @@
 
 # Dev
 
-1. Clonar el repositorio
-2. Instalar dependencias
-3. Crear un archivo `.env` con las variables de entorno basado en el `.env.template`
-4. Ejecutar migracion de primas con `npx prima migrate dev`
-5. Correr la aplicación con `npm run start:dev` 
+1. Clonar reositorio
+2. Inatalar las dependencias con  `npm install`.
+3. Crear un archivo `.env` y copiar lo que hay en el `.env.template`
+4. Ejecutar migracion de prima `npx prisma migrate dev`
+5. Levantar el servidor de NATS
+```
+docker run -d --name nats-main -p 4222:4222 -p 6222:6222 -p 8222:8222 nats
+```
+6. Ejecutar la aplicacion con `npm run start:dev`
